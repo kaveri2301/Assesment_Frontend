@@ -68,7 +68,7 @@ export default function Registration() {
         console.log(newData);
 
         
-        axios.post('/employee/add', newData)
+        axios.post('http://localhost:8080/employee/add', newData)
             .then(res => {
                 console.log(res.data);
             })
@@ -403,13 +403,13 @@ export default function Registration() {
                     onClick={() => {
                       navigate('/table')
                       
-                    }}>UsersTable</button>
+                    }}>Employee Table</button>
 
-             <button className='btn btn-secondary mt-3'
+             {/* <button className='btn btn-secondary mt-3'
                     onClick={() => {
                       navigate('/updateform')
                       
-                    }}>UpdateForm</button>
+                    }}>Employee UpdateForm</button> */}
     </Row>
                 
             </Form>

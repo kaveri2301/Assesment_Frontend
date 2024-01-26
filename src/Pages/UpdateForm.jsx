@@ -37,7 +37,7 @@ export default function UpdateForm() {
     newData.append('marritalstatus', marritalstatus)
     newData.append('image', photo)
 
-    axios.put(`/employee/update/${xyz}`, newData)
+    axios.put(`http://localhost:8080/employee/update/${xyz}`, newData)
       .then(res => {
         console.log(res.data);
       })
@@ -66,7 +66,7 @@ export default function UpdateForm() {
   };
 
   useEffect(() => {
-    axios.get(`/employee/find/${xyz}`)
+    axios.get(`http://localhost:8080/employee/find/${xyz}`)
       .then(res => {
         console.log(res.data.empData);
         const eData = res.data.empData
@@ -331,7 +331,7 @@ export default function UpdateForm() {
 
           </Form.Group>
         </Row>
-        <Button type="submit">Update</Button>
+        <Button type="submit" >Update</Button>
       </Form>
 
     </div>

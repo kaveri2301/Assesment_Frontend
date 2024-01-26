@@ -26,7 +26,7 @@ export default function UsersTable() {
   // }
 
   function showEmployees() {
-    axios.get('/employee/findall')
+    axios.get('http://localhost:8080/employee/findall')
       .then(res => {
         console.log(res.empData);  // Add this line to see the response data
         setEmployeeData(res.data.empData);
@@ -43,7 +43,7 @@ export default function UsersTable() {
 
 
   function handleDelete(abc) {
-    axios.delete(`/employee/delete/${abc}`)
+    axios.delete(`http://localhost:8080/employee/delete/${abc}`)
       .then(res => {
         console.log(res.data);
         showEmployees()
@@ -98,7 +98,7 @@ export default function UsersTable() {
                 <td className='d-flex justify-content-evenly'>
                   <button className='btn btn-warning '
                     onClick={() => {
-                      navigate('/update')
+                      navigate('/updateform')
                       localStorage.setItem('empEmail', a.email)
                     }}>Update</button>
                   <button className='btn btn-danger'
